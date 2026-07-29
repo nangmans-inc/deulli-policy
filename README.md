@@ -7,12 +7,12 @@
 빌드 없는 순수 HTML/CSS다. Vercel에 그대로 올린다.
 
 ```
-index.html              허브
+index.html              /terms 이동용 폴백
 terms.html              → /terms
 privacy.html            → /privacy
 account-deletion.html   → /account-deletion
-styles.css              라이트/다크, 모바일 대응
-vercel.json             cleanUrls: true
+styles.css              라이트 모드, 탭 탐색, 모바일 대응
+vercel.json             cleanUrls: true, / → /terms 리디렉션
 ```
 
 ---
@@ -66,7 +66,7 @@ Vercel 프로젝트 → Settings → Domains → `deulli.policy.nangmans.com` �
 
 ## 공개 전 체크리스트
 
-- [ ] **네 페이지의 `#draft-banner` div 삭제**
+- [ ] **세 문서의 `#draft-banner` div 삭제**
   ```bash
   grep -l 'draft-banner' *.html
   ```
@@ -75,7 +75,7 @@ Vercel 프로젝트 → Settings → Domains → `deulli.policy.nangmans.com` �
   grep -n 'class="todo"' privacy.html
   ```
 - [ ] **시행일 확인** — 현재 `2026년 7월 29일`. 실제 공개일이 다르면 아래를 고친다.
-  `terms.html`(헤더, 부칙) · `privacy.html`(헤더, 제17항, 버전 이력) · `index.html`(목록)
+  `terms.html`(헤더, 부칙) · `privacy.html`(헤더, 제17항, 버전 이력)
 
 > **변호사 검토는 받지 않기로 했다** (2026-07-29 결정). 남는 리스크는 「약관의 규제에 관한 법률」상 개별 조항의 무효 판정인데, 무효가 나더라도 같은 법 제16조에 따라 **그 조항만 효력을 잃고 나머지 약관은 유지**된다. 면책 조항은 `terms.html` 제23조제5항에 고의·중과실 배제를 두어 전면 무효를 피하도록 설계했다.
 
