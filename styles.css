@@ -75,25 +75,6 @@ summary:focus-visible {
 	transform: translateY(0);
 }
 
-/* 공개 전 상태 안내 */
-#draft-banner {
-	position: relative;
-	z-index: 30;
-	padding: 0.5rem 1.25rem;
-	background: var(--warning-subtle);
-	color: var(--warning-text);
-	font-size: 0.8125rem;
-	line-height: 1.5;
-	text-align: center;
-}
-
-#draft-banner code {
-	padding: 0.0625rem 0.3125rem;
-	border-radius: 4px;
-	background: rgba(138, 79, 0, 0.08);
-	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-}
-
 /* 상단 브랜드 및 문서 탭 */
 .site-header {
 	position: sticky;
@@ -119,9 +100,9 @@ summary:focus-visible {
 .brand {
 	display: inline-flex;
 	flex: 0 0 auto;
-	align-items: baseline;
+	align-items: center;
 	align-self: center;
-	gap: 0.4rem;
+	gap: 0.625rem;
 	color: var(--text-primary);
 	font-size: 1.0625rem;
 	font-weight: 750;
@@ -129,12 +110,17 @@ summary:focus-visible {
 	text-decoration: none;
 }
 
-.brand::before {
-	width: 0.5rem;
-	height: 0.5rem;
-	border-radius: 999px;
-	background: var(--action-primary);
-	content: "";
+.brand-logo {
+	display: block;
+	flex: 0 0 auto;
+	width: 2rem;
+	height: 2rem;
+}
+
+.brand > span {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.4rem;
 }
 
 .brand small {
@@ -282,15 +268,15 @@ hr {
 /* 긴 문서의 목차 */
 .toc-column {
 	min-width: 0;
-}
-
-nav.toc {
 	position: sticky;
 	top: 6rem;
 	max-height: calc(100vh - 7.5rem);
-	padding-right: 0.75rem;
 	overflow-y: auto;
 	scrollbar-width: thin;
+}
+
+nav.toc {
+	padding-right: 0.75rem;
 }
 
 nav.toc h2 {
@@ -440,11 +426,6 @@ footer.doc a {
 		scroll-padding-top: 8.75rem;
 	}
 
-	#draft-banner {
-		padding-inline: 1rem;
-		text-align: left;
-	}
-
 	.site-header-inner {
 		display: block;
 		min-height: auto;
@@ -508,7 +489,10 @@ footer.doc a {
 	}
 
 	.toc-column {
+		position: static;
+		max-height: none;
 		margin-bottom: 3rem;
+		overflow: visible;
 	}
 
 	nav.toc {
@@ -534,7 +518,6 @@ footer.doc a {
 }
 
 @media print {
-	#draft-banner,
 	.site-header,
 	.toc-column {
 		display: none;

@@ -11,6 +11,7 @@ index.html              /terms 이동용 폴백
 terms.html              → /terms
 privacy.html            → /privacy
 account-deletion.html   → /account-deletion
+logo.svg                사이트 로고 및 파비콘
 styles.css              라이트 모드, 탭 탐색, 모바일 대응
 vercel.json             cleanUrls: true, / → /terms 리디렉션
 ```
@@ -66,10 +67,6 @@ Vercel 프로젝트 → Settings → Domains → `deulli.policy.nangmans.com` �
 
 ## 공개 전 체크리스트
 
-- [ ] **세 문서의 `#draft-banner` div 삭제**
-  ```bash
-  grep -l 'draft-banner' *.html
-  ```
 - [ ] **`.todo` 표시 채우기** — `privacy.html` 제8항 국외이전 표에 4곳. 브라우저에서 빨간색으로 보인다.
   ```bash
   grep -n 'class="todo"' privacy.html
