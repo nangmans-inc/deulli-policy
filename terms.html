@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -17,29 +17,47 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+
 <!-- ⚠️ 공개 전 이 배너를 삭제하세요 (세 페이지 모두) -->
 <div id="draft-banner">
 	<strong>초안입니다.</strong> <code>.todo</code> 표시를 모두 채운 뒤 이 배너를 삭제하고 배포하세요.
 </div>
 
-<div class="wrap">
+<header class="site-header">
+	<div class="site-header-inner">
+		<a class="brand" href="/terms">들리 <small>deulli</small></a>
+		<nav class="policy-tabs" aria-label="정책 문서">
+			<a href="/terms" aria-current="page">이용약관</a>
+			<a href="/privacy">개인정보 처리방침</a>
+			<a href="/account-deletion">계정 삭제</a>
+		</nav>
+	</div>
+</header>
+
+<main class="wrap has-toc" id="main-content">
 
 <header class="doc">
-	<a class="brand" href="/">들리 deulli</a>
+	<p class="eyebrow">정책 및 약관</p>
 	<h1>서비스 이용약관</h1>
 	<p class="meta">시행일 2026년 7월 29일 · 버전 1.0</p>
 </header>
 
-<nav class="toc">
-	<h2>목차</h2>
-	<ol>
-		<li><a href="#ch1">제1장 총칙</a> (제1조~제6조)</li>
-		<li><a href="#ch2">제2장 회원</a> (제7조~제12조)</li>
-		<li><a href="#ch3">제3장 서비스의 이용</a> (제13조~제16조)</li>
-		<li><a href="#ch4">제4장 권리와 의무</a> (제17조~제20조)</li>
-		<li><a href="#ch5">제5장 피해구제 및 보칙</a> (제21조~제26조)</li>
-	</ol>
-</nav>
+<div class="document-shell">
+	<aside class="toc-column" aria-label="이용약관 목차">
+		<nav class="toc" aria-label="이용약관 세부 목차">
+			<h2>목차</h2>
+			<ol>
+				<li><a href="#ch1">제1장 총칙</a> (제1조~제6조)</li>
+				<li><a href="#ch2">제2장 회원</a> (제7조~제12조)</li>
+				<li><a href="#ch3">제3장 서비스의 이용</a> (제13조~제16조)</li>
+				<li><a href="#ch4">제4장 권리와 의무</a> (제17조~제20조)</li>
+				<li><a href="#ch5">제5장 피해구제 및 보칙</a> (제21조~제26조)</li>
+			</ol>
+		</nav>
+	</aside>
+
+	<article class="document-body">
 
 <h2 id="ch1">제1장 총칙</h2>
 
@@ -202,21 +220,25 @@
 <p class="clause">③ 협의로 해결되지 아니하는 경우 회원은 다음 기관에 분쟁조정을 신청할 수 있습니다.</p>
 <div class="table-scroll">
 <table>
+<tbody>
 	<tr><th>기관</th><th>담당</th><th>연락처</th></tr>
 	<tr><td>콘텐츠분쟁조정위원회</td><td>콘텐츠 이용 관련 분쟁</td><td><a href="https://www.kcdrc.kr">www.kcdrc.kr</a></td></tr>
 	<tr><td>한국소비자원 소비자상담센터</td><td>소비자 피해 상담·구제</td><td>(국번없이) 1372 · <a href="https://www.kca.go.kr">www.kca.go.kr</a></td></tr>
 	<tr><td>개인정보분쟁조정위원회</td><td>개인정보 관련 분쟁</td><td>(국번없이) 1833-6972 · <a href="https://www.kopico.go.kr">www.kopico.go.kr</a></td></tr>
+</tbody>
 </table>
 </div>
 
 <h3>제25조 (운영자의 정보 및 문의 창구)</h3>
 <div class="table-scroll">
 <table>
+<tbody>
 	<tr><th>구분</th><th>내용</th></tr>
 	<tr><td>서비스명</td><td>들리(deulli)</td></tr>
 	<tr><td>운영자</td><td>손기령</td></tr>
 	<tr><td>문의 이메일</td><td><a href="mailto:contact@nangmans.com">contact@nangmans.com</a></td></tr>
 	<tr><td>호스팅서비스 제공자</td><td>Amazon Web Services</td></tr>
+</tbody>
 </table>
 </div>
 
@@ -229,10 +251,13 @@
 <h3>부칙</h3>
 <p>이 약관은 2026년 7월 29일부터 시행합니다.</p>
 
+	</article>
+</div>
+
 <footer class="doc">
 	<p>들리(deulli) · <a href="/privacy">개인정보 처리방침</a> · <a href="/account-deletion">계정 삭제 요청</a></p>
 </footer>
 
-</div>
+</main>
 </body>
 </html>
