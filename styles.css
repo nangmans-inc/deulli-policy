@@ -353,6 +353,11 @@ nav.toc a:hover {
 	-webkit-overflow-scrolling: touch;
 }
 
+/* 열이 많은 표는 좁게 눌리면 법령 인용이 중간에서 끊기므로 최소 폭을 더 준다 */
+table.wide {
+	min-width: 52rem;
+}
+
 table {
 	width: 100%;
 	min-width: 30rem;
