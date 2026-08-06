@@ -302,7 +302,11 @@ nav.toc {
 	flex: 0 0 auto;
 	width: 0.4375rem;
 	height: 0.4375rem;
+	/* 45도 회전한 정사각형의 변환 후 경계상자는 변 길이의 약 1.41배라 오른쪽으로
+	   1.7px 정도 삐져나온다. 그대로 두면 overflow-y:auto 인 .toc-column 이
+	   가로로도 스크롤 가능해져 목차 아래에 2px짜리 스크롤바가 생긴다. */
 	margin-top: -0.25rem;
+	margin-right: 2px;
 	border-right: 1.5px solid var(--text-tertiary);
 	border-bottom: 1.5px solid var(--text-tertiary);
 	transform: rotate(45deg);
@@ -545,9 +549,11 @@ footer.doc a {
 		background: var(--surface-subtle);
 	}
 
+	/* 목차 여닫이와 목차 링크는 모바일에서 유일한 문서 내 탐색 수단이다.
+	   Apple HIG 권장치인 44px 를 터치 영역 높이로 확보한다. */
 	.toc-disclosure > summary {
 		align-items: center;
-		min-height: 1.75rem;
+		min-height: 2.75rem;
 		margin-bottom: 0;
 		font-size: 0.9375rem;
 	}
@@ -572,7 +578,7 @@ footer.doc a {
 	}
 
 	nav.toc a {
-		padding: 0.5625rem 0;
+		padding: 0.75rem 0;
 	}
 }
 
