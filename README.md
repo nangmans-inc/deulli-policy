@@ -1,6 +1,6 @@
 # deulli-policy
 
-영어 청취 학습 앱 **들리(deulli)**의 이용약관 · 개인정보 처리방침 · 계정 삭제 요청 안내 정적 사이트.
+영어 청취 학습 앱 **들리(deulli)**의 고객지원 · 이용약관 · 개인정보 처리방침 · 계정 삭제 요청 안내 정적 사이트.
 
 배포 주소 — **https://deulli.policy.nangmans.com**
 
@@ -8,6 +8,7 @@
 
 ```
 index.html              /terms 이동용 폴백
+support.html            → /support
 terms.html              → /terms
 privacy.html            → /privacy
 account-deletion.html   → /account-deletion
@@ -24,13 +25,30 @@ vercel.json             cleanUrls: true, / → /terms 리디렉션
 
 | | Apple | Google Play |
 | --- | --- | --- |
-| 개인정보 처리방침 웹 URL | **필수** — App Store Connect 메타데이터 필드가 URL 입력란 | **필수** |
+| 개인정보 처리방침 웹 URL | **필수** — App Store Connect 메타데이터 필드 | **필수** |
+| 고객지원 웹 URL | **필수** — App Store Connect의 Support URL이 required 필드 | 선택 — 지원 이메일만 필수, 웹사이트는 권장 |
 | 계정 삭제 요청 웹 URL | 불필요 | **필수** — Data safety 폼에 등록 |
 | 앱 내 계정 삭제 | **필수** (앱에서 시작돼야 함) | **필수** |
 
 Google Play는 방침 URL이 **활성·공개 접근 가능·편집 불가**여야 한다고 명시한다. PDF 불가, 로그인 뒤 불가.
 
-계정 삭제 웹 페이지가 따로 필요한 이유는 Google 정책 원문에 있다 — *"Some users may have already uninstalled your app."* 이미 앱을 지운 사람도 삭제를 요청할 수 있어야 한다. 형식은 자유이고 **이메일 안내만으로도 인정**된다.
+### 고객지원 페이지 (`/support`)
+
+Apple 심사지침 1.5는 *"Make sure your app and its Support URL include an easy way to contact you"*라고 요구하고, App Store Connect의 **Support URL은 Privacy Policy URL과 함께 required 필드**다. 즉 앱을 올리려면 이 페이지가 없을 수 없다.
+
+거절을 부르는 형태가 정해져 있다 — SNS 프로필, 404, "coming soon", 연락 수단 없는 회사 홈페이지, FAQ만 있고 연락처가 없는 페이지. 그래서 `/support`는 **연락 수단(이메일)을 최상단 블록에 두고**, 회신 기한을 명시하고, 앱 이름을 페이지에 드러낸다.
+
+Google Play는 웹사이트를 요구하진 않지만 **지원 이메일은 필수**이고 *"respond to customer support questions within three business days"*를 요구한다. 페이지에 적은 "영업일 기준 3일 이내 처리 경과"가 이 기준과 약관 제21조제3항 양쪽에 맞춰져 있다.
+
+국내법 근거도 있다. 「전기통신사업법」 제32조제1항은 *"이용자로부터 제기되는 정당한 의견이나 불만을 즉시 처리하여야 한다. 이 경우 즉시 처리하기 곤란한 경우에는 이용자에게 그 사유와 처리일정을 알려야 한다"*고 정한다. 무료·개인 운영이라도 적용된다 — 같은 법 시행령 제30조제1항이 **인터넷으로 부가통신역무를 제공하는 자본금 1억원 이하 사업자의 신고를 면제**하고, 법 제2조제8호가 **"신고가 면제된 경우를 포함"하여 전기통신사업자로 정의**하기 때문이다. 페이지의 "즉시 처리하기 곤란한 경우 사유와 처리 일정을 알려 드립니다" 문장이 이 조문을 그대로 이행한다.
+
+### 계정 삭제 페이지 (`/account-deletion`)
+
+**`/support`와 별도로 유지해야 한다.** 필요한 이유는 Google 정책 원문에 있다 — *"Some users may have already uninstalled your app."* 이미 앱을 지운 사람도 삭제를 요청할 수 있어야 한다. 형식은 자유이고 **이메일 안내만으로도 인정**된다.
+
+Google은 이 웹 링크가 ① 오류 없이 로드되고 ② 삭제 경로가 눈에 띄게 드러나며 ③ **스토어 등재명과 같은 앱·개발자 이름을 담을 것**을 요구한다. Data safety 폼에 등록하는 URL이 고객지원 페이지가 되면 삭제 경로가 다른 안내에 묻히므로, 전용 URL을 유지하고 `/support` 제5항에서 링크만 건다.
+
+Apple은 반대로 **웹 페이지를 요구하지 않는다.** 오히려 *"Apps not operating in highly regulated industries should not require people to make a phone call, send an email, or go through other support flows"*라고 못박는다. 앱 내 삭제가 정상 경로이고, 웹 페이지는 앱을 지운 사람을 위한 보조 수단이다.
 
 ---
 
@@ -56,8 +74,12 @@ Vercel 프로젝트 → Settings → Domains → `deulli.policy.nangmans.com` �
 
 - [ ] **App Store Connect** → 앱 정보 → 개인정보 처리방침 URL
   `https://deulli.policy.nangmans.com/privacy`
+- [ ] **App Store Connect** → 앱 정보 → 지원 URL *(required 필드)*
+  `https://deulli.policy.nangmans.com/support`
 - [ ] **Play Console** → 앱 콘텐츠 → 개인정보처리방침
   `https://deulli.policy.nangmans.com/privacy`
+- [ ] **Play Console** → 스토어 설정 → 스토어 등록정보 연락처 정보
+  이메일 `contact@nangmans.com` *(필수)* · 웹사이트 `https://deulli.policy.nangmans.com/support` *(권장)*
 - [ ] **Play Console** → 앱 콘텐츠 → Data safety → 데이터 삭제 URL
   `https://deulli.policy.nangmans.com/account-deletion`
 - [ ] **앱 설정 화면**의 약관·방침 항목을 위 URL로 연결
@@ -67,9 +89,9 @@ Vercel 프로젝트 → Settings → Domains → `deulli.policy.nangmans.com` �
 
 ## 공개 전 체크리스트
 
-- [ ] **`.todo` 표시 채우기** — `privacy.html` 제8항 국외이전 표에 4곳. 브라우저에서 빨간색으로 보인다.
+- [ ] **`.todo` 표시 채우기** — `privacy.html` 제8항 국외이전 표, `support.html` 제1항 앱 버전 확인 경로. 브라우저에서 빨간색으로 보인다.
   ```bash
-  grep -n 'class="todo"' privacy.html
+  grep -n 'class="todo"' *.html
   ```
 - [ ] **시행일 확인** — 현재 `2026년 7월 29일`. 실제 공개일이 다르면 아래를 고친다.
   `terms.html`(헤더, 부칙) · `privacy.html`(헤더, 제17항, 버전 이력)
