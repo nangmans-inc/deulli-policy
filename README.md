@@ -12,6 +12,7 @@ support.html            → /support
 terms.html              → /terms
 privacy.html            → /privacy
 account-deletion.html   → /account-deletion
+licenses.html           → /licenses
 logo.svg                사이트 로고 및 파비콘
 styles.css              라이트 모드, 탭 탐색, 모바일 대응
 vercel.json             cleanUrls: true, / → /terms 리디렉션
@@ -50,6 +51,18 @@ Google은 이 웹 링크가 ① 오류 없이 로드되고 ② 삭제 경로가 
 
 Apple은 반대로 **웹 페이지를 요구하지 않는다.** 오히려 *"Apps not operating in highly regulated industries should not require people to make a phone call, send an email, or go through other support flows"*라고 못박는다. 앱 내 삭제가 정상 경로이고, 웹 페이지는 앱을 지운 사람을 위한 보조 수단이다.
 
+### 출처·라이선스 페이지 (`/licenses`)
+
+**법적 의무를 이행하는 페이지다.** 단어장의 뜻풀이는 위키낱말사전에서 나온 자료를 kaikki.org 추출본으로 받아 쓰는데, 이 자료의 라이선스가 **CC BY-SA 4.0**이라 저작자 표시가 조건이다. 표시 없이 배포하면 라이선스 위반이다.
+
+CC BY-SA 4.0은 요구 정보를 담은 리소스의 **URI나 하이퍼링크를 제공하는 방식으로 표시 의무를 충족**할 수 있게 정하고 있다(제3조 가항). 그래서 앱 안에 전문을 박아 넣는 대신 이 페이지를 두고 앱에서 링크한다. 출처가 늘어날 때마다 앱을 재배포하지 않아도 되는 게 실질적 이유다.
+
+Apple 심사지침 5.2.1도 제3자 자료를 쓸 권한을 요구하며, 심사에서 근거 제출을 요청받는다. "CC BY-SA이고 이 페이지에서 표시하고 있다"가 그 답이 된다.
+
+동일조건변경허락(ShareAlike) 조건 때문에 **뜻풀이 데이터를 추려 만든 우리 데이터셋도 CC BY-SA 4.0으로 공개한다고 페이지에 명시**했다. 이 범위를 바꾸려면 라이선스 해석을 다시 확인해야 한다.
+
+콘텐츠 제작에 생성형 AI를 쓴다는 사실은 `terms.html` 제3조가 이미 고지하고 있고, 이 페이지는 그 내용을 출처 관점에서 다시 정리한 것이다. **둘 중 하나만 고치면 어긋난다.**
+
 ---
 
 ## 배포
@@ -84,6 +97,9 @@ Vercel 프로젝트 → Settings → Domains → `deulli.policy.nangmans.com` �
   `https://deulli.policy.nangmans.com/account-deletion`
 - [ ] **앱 설정 화면**의 약관·방침 항목을 위 URL로 연결
   Apple 5.1.1(i)는 스토어 메타데이터**와** 앱 내부 **양쪽**을 요구한다.
+- [ ] **앱 설정 화면**(상세정보)에 출처·라이선스 항목 추가
+  `https://deulli.policy.nangmans.com/licenses`
+  CC BY-SA의 저작자 표시는 앱에서 이 페이지에 닿을 수 있어야 이행된다.
 
 ---
 
