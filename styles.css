@@ -6,7 +6,7 @@
 	--surface-muted: #f1f4f8;
 	--text-primary: #041225;
 	--text-secondary: #4c5d72;
-	--text-tertiary: #718196;
+	--text-tertiary: #617287;
 	--border-subtle: #e3e9f0;
 	--action-primary: #0150e5;
 	--action-primary-hover: #0640b9;
@@ -54,7 +54,7 @@ a:hover {
 
 a:focus-visible,
 summary:focus-visible {
-	outline: 3px solid #bbd6ff;
+	outline: 3px solid var(--action-primary);
 	outline-offset: 3px;
 	border-radius: 4px;
 }
@@ -512,6 +512,38 @@ footer.doc a {
 
 /* 사이드바 목차를 유지하기에 폭이 좁아지는 구간 — 단일 컬럼으로 전환 */
 @media (max-width: 60rem) {
+	html {
+		scroll-padding-top: 8.75rem;
+	}
+
+	/* 여섯 문서 탭이 브랜드와 겹치지 않도록 태블릿부터 두 줄로 배치한다. */
+	.site-header-inner {
+		display: block;
+		min-height: auto;
+		padding: 0.75rem 1rem 0;
+	}
+
+	.brand {
+		min-height: 1.75rem;
+	}
+
+	.policy-tabs {
+		gap: 1.25rem;
+		margin: 0.5rem -1rem 0;
+		padding: 0 1rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	.policy-tabs::-webkit-scrollbar {
+		display: none;
+	}
+
+	.policy-tabs a {
+		min-height: 2.75rem;
+		font-size: 0.875rem;
+	}
+
 	.document-shell {
 		display: block;
 	}
@@ -586,33 +618,6 @@ footer.doc a {
 @media (max-width: 47.5rem) {
 	html {
 		scroll-padding-top: 8.75rem;
-	}
-
-	.site-header-inner {
-		display: block;
-		min-height: auto;
-		padding: 0.75rem 1rem 0;
-	}
-
-	.brand {
-		min-height: 1.75rem;
-	}
-
-	.policy-tabs {
-		gap: 1.25rem;
-		margin: 0.5rem -1rem 0;
-		padding: 0 1rem;
-		overflow-x: auto;
-		scrollbar-width: none;
-	}
-
-	.policy-tabs::-webkit-scrollbar {
-		display: none;
-	}
-
-	.policy-tabs a {
-		min-height: 2.75rem;
-		font-size: 0.875rem;
 	}
 
 	.wrap {
