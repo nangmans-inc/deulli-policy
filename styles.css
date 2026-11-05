@@ -363,6 +363,11 @@ table.wide {
 	min-width: 52rem;
 }
 
+/* 국외 이전 7개 열의 본문·기간을 읽을 수 있도록 표 안에서 가로로 이동한다. */
+table.privacy-transfers {
+	min-width: 84rem;
+}
+
 table {
 	width: 100%;
 	min-width: 30rem;
