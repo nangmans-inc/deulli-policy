@@ -503,6 +503,12 @@ footer.doc a {
 	color: var(--text-secondary);
 }
 
+footer.doc .official-home-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+}
+
 .redirect {
 	display: grid;
 	min-height: 100vh;
